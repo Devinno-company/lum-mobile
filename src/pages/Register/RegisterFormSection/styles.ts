@@ -11,12 +11,13 @@ const styles = StyleSheet.create({
   },
 
   content: {
+    flex: 1,
     alignItems: 'center',
+    minHeight: 325,
   },
 
   footer: {
     alignItems: 'center',
-    flex: 1,
     justifyContent: 'flex-end',
   },
 
@@ -25,13 +26,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#052377',
     marginBottom: '15%',
-  },
-
-  subText: {
-    fontSize: 8,
-    fontFamily: 'Poppins_700Bold',
-    color: '#052377',
-    marginTop: 20,
   },
 
   subTitle: {
@@ -53,28 +47,11 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '60%',
     marginBottom: 40,
+    marginTop: '20%',
   },
-
-  checkboxContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    alignSelf: 'flex-start',
-    marginLeft: 4,
-    marginBottom: '16%',
-    marginTop: 16,
-  },
-
-  checkbox: {
-    transform: [
-      {scale: 0.6},
-      {translateY: -2}
-    ]
-  },
-
-  checkboxLabel: {
-    fontFamily: 'Poppins_400Regular',
-    fontSize: 8,
-    color: '#052377',
+  
+  formStep: {
+    width: '100%',
   }
 });
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Formik, Field } from 'formik';
-import { Text, View } from 'react-native';
+import { Formik } from 'formik';
+import { Text, View, KeyboardAvoidingView } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import * as yup from 'yup';
 
@@ -45,50 +45,51 @@ const LoginFormSection = () => {
           >
             {(props) => (
               <>
-                <Field
-                  component={InputField}
-                  label="Endereço de e-mail"
-                  icon="mail"
-                  value={props.values.email}
-                  onChangeText={props.handleChange('email')}
-                  errorText={props.errors.email}
-                  keyboardType="email-address"
-                  autoCapitalize="none"
-                />
-
-                <Field
-                  component={InputField}
-                  label="Senha"
-                  icon="lock"
-                  value={props.values.password}
-                  onChangeText={props.handleChange('password')}
-                  errorText={props.errors.password}
-                  autoCapitalize="none"
-                  password
-                />
-
-                <View style={styles.checkboxContainer}>
-                  <CheckBox
-                    tintColors={{true: '#052377'}}
-                    style={styles.checkbox}
-                    value={rememberMe}
-                    onTouchEnd={() => {setRememberMe(!rememberMe)}}
+                <View style={styles.formWrapper}>
+                  <InputField
+                    label="Endereço de e-mail"
+                    icon="mail"
+                    value={props.values.email}
+                    onChangeText={props.handleChange('email')}
+                    errorText={props.errors.email}
+                    keyboardType="email-address"
+                    autoCapitalize="none"
                   />
-                  <Text style={styles.checkboxLabel}>Mantenha-me logado!</Text>
+
+                  <InputField
+                    label="Senha"
+                    icon="lock"
+                    value={props.values.password}
+                    onChangeText={props.handleChange('password')}
+                    errorText={props.errors.password}
+                    autoCapitalize="none"
+                    password
+                  />
+
+                  <View style={styles.checkboxContainer}>
+                    <CheckBox
+                      tintColors={{true: '#052377'}}
+                      style={styles.checkbox}
+                      value={rememberMe}
+                      onTouchEnd={() => {setRememberMe(!rememberMe)}}
+                    />
+                    <Text style={styles.checkboxLabel}>Mantenha-me logado!</Text>
+                  </View>
                 </View>
 
-                
-                <Text style={styles.errorText}>{error}</Text>
-                <GradientButton
-                  label="Logar-se!"
-                  colors={['#052377', '#2B8AFC']}
-                  onPress={props.handleSubmit}
-                />
+                <View style={styles.buttonWrapper}>
+                  <Text style={styles.errorText}>{error}</Text>
+                  <GradientButton
+                    label="Logar-se!"
+                    colors={['#052377', '#2B8AFC']}
+                    onPress={props.handleSubmit}
+                    />
+                  <Text style={styles.subText}>Esqueceu sua senha? Recupere aqui</Text>
+                </View>
               </>
             )}
           </Formik>
 
-        <Text style={styles.subText}>Esqueceu sua senha? Recupere aqui</Text>
       </View>
       <View style={styles.footer}>
         <View style={styles.iconsContainer}>

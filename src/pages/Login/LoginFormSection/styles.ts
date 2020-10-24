@@ -11,12 +11,13 @@ const styles = StyleSheet.create({
   },
 
   content: {
+    flex: 1,
     alignItems: 'center',
+    minHeight: 325,
   },
 
   footer: {
     alignItems: 'center',
-    flex: 1,
     justifyContent: 'flex-end',
   },
 
@@ -53,14 +54,16 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     width: '60%',
     marginBottom: 40,
+    marginTop: '20%',
   },
 
   checkboxContainer: {
+    justifyContent: 'flex-start',
+    alignSelf: 'flex-start',
     flexDirection: 'row',
     alignItems: 'center',
-    alignSelf: 'flex-start',
-    marginBottom: '12%',
     marginTop: 16,
+    width: '100%',
   },
 
   checkbox: {
@@ -82,6 +85,16 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins_400Regular',
     fontSize: 8,
     color: '#ED3F62',
+  },
+
+  buttonWrapper: {
+    alignItems: 'center',
+    width: '100%',
+  },
+
+  formWrapper: {
+    width: '100%',
+    flex: 1,
   }
 });
 
